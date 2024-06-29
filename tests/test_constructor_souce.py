@@ -1,4 +1,4 @@
-from tests.locators import Locators
+from locators import Locators
 
 
 
