@@ -5,8 +5,7 @@ from constants import Constants
 
 
 
-def test_click_constructor(login):
-    wait = WebDriverWait(login, 10)
+def test_click_constructor(login, wait):
     driver = login
     driver.find_element(*Locators.PRIVATE_AREA_LOCATOR).click()
     expected_url = Constants.URL_PROFILE

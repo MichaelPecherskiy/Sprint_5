@@ -1,11 +1,9 @@
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
 from constants import Constants
-from selenium.webdriver.support.ui import WebDriverWait
 
 
-def test_personal_area_click(login):
-    wait = WebDriverWait(login, 10)
+def test_personal_area_click(login, wait):
     driver = login
     driver.find_element(*Locators.PRIVATE_AREA_LOCATOR).click()
     driver.find_element(*Locators.BUTTON_PRIVATE_ACC).click()

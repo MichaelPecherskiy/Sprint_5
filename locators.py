@@ -3,24 +3,25 @@ from selenium.webdriver.common.by import By
 
 class Locators:
     #register
-    EMAIL = (By.XPATH, '(//input[@class="text input__textfield text_type_main-default"])[2]')
-    PASSWORD = (By.XPATH, '(//div[@class="input pr-6 pl-6 input_type_password input_size_default"])/input')
-    NAME_FIELD = (By.XPATH, '(//div[@class="input pr-6 pl-6 input_type_text input_size_default"])[1]/input')
+    EMAIL = (By.XPATH, "(//input[@type='text'])[2]")
+    PASSWORD = (By.XPATH, "//input[@type='password']")
+    NAME_FIELD = (By.XPATH, "(//input[@type='text'])[1]")
     BUTTON = (By.XPATH, "//button[contains(@Class, 'button_button')]") # Кнопка регистрации
 
     #login
     LOGIN_BUTTON = (By.XPATH, "//button[contains(@class, 'button')]") # Кнопка логина
-    LOGIN_EMAIL = (By.XPATH, '(//input[@class="text input__textfield text_type_main-default"])[1]')
-    LOGIN_PASSWORD = (By.XPATH, '(//input[@class="text input__textfield text_type_main-default"])[2]')
+    LOGIN_EMAIL = (By.XPATH, "//input[@type='text']")
+    LOGIN_PASSWORD = (By.XPATH, "//input[contains(@type, 'password')]")
+
     REG_AUTH_LOCATOR = (By.XPATH, '//a[@class="Auth_link__1fOlj"]') # локатор зарегестрироваться на странице логина
-    PRIVATE_AREA_LOCATOR = (By.XPATH, '(//a[@class="AppHeader_header__link__3D_hX"])[last()]') # локатор личный кабинет
-    FORGOT_PASSWORD_BUTTON = (By.XPATH, '(// a[@class ="Auth_link__1fOlj"])[1]') # локатор в кнопке забыли пароль где
+    PRIVATE_AREA_LOCATOR = (By.XPATH, "//a[@href='/account']") # локатор личный кабинет
+    FORGOT_PASSWORD_BUTTON = (By.XPATH, '(// a[@class ="Auth_link__1fOlj"])[1]') # локатор в кнопке забыли пароль
     REG_LOGIN_PAGE = (By.XPATH, '(// a[@class ="Auth_link__1fOlj"])[1]')  # локатор кнопки зарегистрироваться на странице логина
     EXIT_BUTTON_LOCATOR = (By.XPATH, "//button[contains(@class, 'text')]") # кнопка выхода из аккаунта
-    BUTTON_PRIVATE_ACC = (By.XPATH,'//a[@class ="AppHeader_header__link__3D_hX AppHeader_header__link_active__1IkJo"]') # кнопка личного кабинета в настройках пользователя
+    BUTTON_PRIVATE_ACC = (By.XPATH, "//a[@href='/account/profile']") # кнопка личного кабинета в настройках пользователя
 
     #others
-    PERSONAL_AREA = (By.XPATH, '(//a[@class="AppHeader_header__link__3D_hX"])[last()]')  #локатор личный кабинет
+    PERSONAL_AREA = (By.XPATH, "//a[@href='/account']")  #локатор личный кабинет
     REGISTRATION = (By.XPATH, '//a[@class="Auth_link__1fOlj"]') #локатор зарегестрироваться
     BUTTON_AUTH_ACCOUNT = (By.XPATH, "//button[text()='Войти в аккаунт']") # локатор кнопки войти в аккаунт
     REG_BUTTON_PERSONAL_AREA = (By.XPATH, '(// a[@class ="Auth_link__1fOlj"])[1]') # локатор кнопки зарегистрироваться в там где войти в личный кабинет

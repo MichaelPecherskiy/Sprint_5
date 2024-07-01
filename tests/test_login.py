@@ -7,8 +7,7 @@ from locators import Locators
 
 
 
-def test_login_by_login_to_account(driver):
-    wait = WebDriverWait(driver, 10)
+def test_login_by_login_to_account(driver, wait):
     driver.find_element(*Locators.PRIVATE_AREA_LOCATOR).click()
     driver.find_element(*Locators.LOGIN_EMAIL).send_keys(Constants.EMAIL)
     driver.find_element(*Locators.LOGIN_PASSWORD).send_keys(Constants.PASSWORD)
@@ -20,8 +19,7 @@ def test_login_by_login_to_account(driver):
     assert (expected_url, current_url, f"Expected URL: {expected_url}, but got: {current_url}")
 
 
-def test_login_by_button_personal_area(driver):
-    wait = WebDriverWait(driver, 10)
+def test_login_by_button_personal_area(driver, wait):
     driver.find_element(*Locators.LOGIN_BUTTON).click()
     driver.find_element(*Locators.LOGIN_EMAIL).send_keys(Constants.EMAIL)
     driver.find_element(*Locators.LOGIN_PASSWORD).send_keys(Constants.PASSWORD)
@@ -33,8 +31,7 @@ def test_login_by_button_personal_area(driver):
     assert (expected_url, current_url, f"Expected URL: {expected_url}, but got: {current_url}")
 
 
-def test_login_from_registration_form(driver):
-    wait = WebDriverWait(driver, 10)
+def test_login_from_registration_form(driver, wait):
     driver.get('https://stellarburgers.nomoreparties.site/register')
     driver.find_element(*Locators.REG_LOGIN_PAGE).click()
     driver.find_element(*Locators.LOGIN_EMAIL).send_keys(Constants.EMAIL)
@@ -47,8 +44,7 @@ def test_login_from_registration_form(driver):
     assert (expected_url, current_url, f"Expected URL: {expected_url}, but got: {current_url}")
 
 
-def test_login_from_password_recovery_form(driver):
-    wait = WebDriverWait(driver, 10)
+def test_login_from_password_recovery_form(driver, wait):
     driver.get('https://stellarburgers.nomoreparties.site/forgot-password')
     driver.find_element(*Locators.FORGOT_PASSWORD_BUTTON).click()
     driver.find_element(*Locators.LOGIN_EMAIL).send_keys(Constants.EMAIL)

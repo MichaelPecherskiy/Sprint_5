@@ -1,11 +1,9 @@
-from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import Locators
 from constants import Constants
 
 
-def test_logout(login):
-    wait = WebDriverWait(login, 10)
+def test_logout(login, wait):
     driver = login
     driver.find_element(*Locators.PRIVATE_AREA_LOCATOR).click()
     expected_url = Constants.URL_PROFILE

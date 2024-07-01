@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
 from constants import Constants
 from locators import Locators
 
@@ -21,3 +21,8 @@ def login(driver):
     driver.find_element(*Locators.LOGIN_PASSWORD).send_keys(Constants.PASSWORD)
     driver.find_element(*Locators.BUTTON).click()
     return driver
+
+
+@pytest.fixture
+def wait(driver):
+    return WebDriverWait(driver, 10)
